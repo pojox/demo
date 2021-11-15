@@ -79,12 +79,18 @@ public class BlogPageHelper {
 		BlogPageObjects.elements.mainActiveCarouselRightArrow.clickButton();
 	}
 
-	public static void verifyOnMainCarouselNavigationToCorrectPost() {
+	public static void verifyOnMainCarouselNavigationToCorrectPost() {		
+		hoverOnMainActiveCarousel();
 		String hrefOriginal = BlogPageObjects.elements.mainActiveCarouselAnchor.getHref();
+		verifyOnMainCarouselBothArrowsDisplayed();		
 		clickOnMainCarouselLeftArrow();
+		
+		hoverOnMainActiveCarousel();
 		String hrefLeft = BlogPageObjects.elements.mainActiveCarouselAnchor.getHref();
-		clickOnMainCarouselRightArrow();
-		String hrefRight = BlogPageObjects.elements.mainActiveCarouselAnchor.getHref();
+		verifyOnMainCarouselBothArrowsDisplayed();
+		clickOnMainCarouselRightArrow();	
+		
+		String hrefRight = BlogPageObjects.elements.mainActiveCarouselAnchor.getHref();		
 		ExpectationHelper.StringCompareNotEqualIgnoreCase(hrefOriginal, hrefLeft);
 		ExpectationHelper.StringCompareIgnoreCase(hrefRight, hrefOriginal);
 	}

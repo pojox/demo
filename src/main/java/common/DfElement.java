@@ -48,8 +48,7 @@ public class DfElement implements IDfElement {
 	}
 
 	public void hoverMouseOver() {
-		ElementHelper.hoverMouseOver(this);	
-		WaitHelper.sleep(1000);
+		ElementHelper.hoverMouseOver(this);
 	}
 	
 	public void hoverMouseOverAndClick() {

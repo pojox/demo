@@ -10,6 +10,7 @@ public class ExpectationHelper {
     	Boolean flag = false;
     	String message = ValidationTextHelper.elementDisplayed(element.getName());
     	try {
+    		WaitHelper.waitForElementToBeVisible(element.getLocater());
     		flag = DriverFactory.getDriverInstance().findElement(element.getLocater()).isDisplayed();
     		LogHelper.log(flag ? Status.PASS : Status.FAIL, message);
     	}

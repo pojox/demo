@@ -76,7 +76,7 @@ public class WaitHelper {
 		WebElement el = driver.findElement(by);
 		new WebDriverWait(driver, Duration.ofMillis(timeMS)).until(ExpectedConditions.visibilityOf(el));
 	}	
-
+	
 	public static void waitForElementToBeHidden(By by) {
 		int default_timeout_ms = Integer.parseInt(PropertiesOperations.getPropertyValueByKey("default_timeout_ms"));
 		waitForElementToBeHidden(by, default_timeout_ms);
