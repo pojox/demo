@@ -77,6 +77,17 @@ public class WaitHelper {
 		new WebDriverWait(driver, Duration.ofMillis(timeMS)).until(ExpectedConditions.visibilityOf(el));
 	}	
 
+	public static void waitForElementToBeHidden(By by) {
+		int default_timeout_ms = Integer.parseInt(PropertiesOperations.getPropertyValueByKey("default_timeout_ms"));
+		waitForElementToBeHidden(by, default_timeout_ms);
+	}
+	
+	public static void waitForElementToBeHidden(By by, int timeMS) {
+		WebDriver driver = DriverFactory.getDriverInstance();
+		WebElement el = driver.findElement(by);
+		new WebDriverWait(driver, Duration.ofMillis(timeMS)).until(ExpectedConditions.invisibilityOf(el));
+	}
+	
 	public static void sleep(int timeMS){
 		try {
 			Thread.sleep(timeMS);

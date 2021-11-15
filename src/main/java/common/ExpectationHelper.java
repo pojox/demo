@@ -34,11 +34,12 @@ public class ExpectationHelper {
     	Boolean flag = false;
     	String message = ValidationTextHelper.elementHidden(element.getName());    	
     	try {
+    		WaitHelper.waitForElementToBeHidden(element.getLocater());
     		flag = DriverFactory.getDriverInstance().findElement(element.getLocater()).isDisplayed();
-    		LogHelper.log(flag ? Status.PASS : Status.FAIL, message);
+    		LogHelper.log(flag ? Status.FAIL : Status.PASS, message);
     	}
     	catch (Exception e) {
-    		LogHelper.log(flag ? Status.PASS : Status.FAIL, message + ".  Exception is: "+e);
+    		LogHelper.log(Status.PASS, message);
 		}
     	
 	}

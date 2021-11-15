@@ -30,7 +30,7 @@ public class TestBase {
 		/**
 		 * revisit home page loader - in the end - workaround - now waits for cookie
 		 */
-		HomePageHelper.cookieBox.verifyLoginPopupDisplayed();
+		//HomePageHelper.cookieBox.verifyLoginPopupDisplayed();
 	}
 
 	@AfterMethod

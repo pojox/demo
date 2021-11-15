@@ -12,7 +12,7 @@ public class HomePageHelper {
 		HomePageObjects.elements.btnStartEditing.verifyDisplayedStatus();
 	}
 	
-	public static void clickLoginButton() {				
+	public static void clickLoginButton() {
 		HomePageObjects.elements.btnLogin.clickButton();
 	}
 	

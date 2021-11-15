@@ -41,7 +41,6 @@ public class ElementHelper {
 			DriverFactory.getDriverInstance().findElement(element.getLocater()).sendKeys(value);
 			LogHelper.log(Status.PASS, message);
 		}catch (Exception e) {
-			System.out.println("sendKeys - ERROR ERROR ERROR ERROR ERROR ");
         	LogHelper.log(Status.FAIL, message + ".  Exception is: "+e);
         }
 	}
